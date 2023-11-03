@@ -1,8 +1,8 @@
-import {combineReducers} from "react-redux";
+import { combineReducers } from "redux";
 import { movieReducer } from "./movie";
 
-const reducers =combineReducers({
-  movies:movieReducer
-})
+const reducers = combineReducers({
+  moviesData: movieReducer,
+});
 
 export default reducers;

@@ -17,5 +17,6 @@ export const movieReducer = (state = initialState, { type, payload }) => {
         ...state,
         movie:payload
     }
+    default: return state;
   }
 };

@@ -1,7 +1,11 @@
 import { Card, Option, Select, Typography } from "@material-tailwind/react";
 import CardBox from "../common/card/CardBox";
+import { useSelector } from "react-redux";
 
 const MovieList = () => {
+  let movieAll=[];
+ movieAll = useSelector(state =>state.moviesData.movies);
+  // console.log(movieAll);
   return (
     <div className="my-8">
       <div className="  flex items-center justify-between ">
@@ -21,14 +25,12 @@ const MovieList = () => {
         </div>
       </div>
       <div className="  grid grid-cols-4 gap-5 mt-10">
-          <CardBox  />
-          <CardBox  />
-          <CardBox  />
-          <CardBox  />
-           <CardBox  />
-          <CardBox  />
-          <CardBox  />
-          <CardBox  />
+      {
+        movieAll.length > 0 ?
+        movieAll.map((movie) =>  <CardBox   movieCard={movie} key={movie.id}/>)
+        : <h1>Loading</h1>
+      }
+         
       </div>
     </div>
   );

@@ -1,5 +1,10 @@
 import { ACTION_TYPE } from "../action_type";
-
+  export const caurosealMovies =(movies) =>{
+    return { 
+      type:ACTION_TYPE.CAUROSEAL_MOVIES,
+      payload:movies,
+    }
+  }
 export const fetchMovies = (movies) => {
   // console.log(movies);
   return {

@@ -1,7 +1,7 @@
 import { Button, Chip } from "@material-tailwind/react";
 
 const CardBox = ({ movieCard }) => {
-  console.log(movieCard);
+  // console.log(movieCard);
   return (
     <div className="  group  cursor-pointer">
       <div className="w-[340px]  h-fit relative rounded-md   duration-300 transition-all   hover:scale-110     hover:rounded-md">

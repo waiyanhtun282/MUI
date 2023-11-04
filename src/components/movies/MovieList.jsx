@@ -7,7 +7,7 @@ const MovieList = () => {
  movieAll = useSelector(state =>state.moviesData.movies);
   // console.log(movieAll);
   return (
-    <div className="my-8">
+    <div className="my-8 select-none">
       <div className="  flex items-center justify-between ">
         <Typography variant="h5">Popular Movies</Typography>
         <div>

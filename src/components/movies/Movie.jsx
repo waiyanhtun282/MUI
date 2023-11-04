@@ -2,7 +2,8 @@ import { useDispatch } from "react-redux";
 import MovieList from "./MovieList";
 import { api, api_key } from "../../api";
 import { useEffect } from "react";
- import { fetchMovies, removeFetchMovie } from "../../redux/actions/movie";
+ import { fetchMovies,  } from "../../redux/actions/movie";
+import SlideCauroseal from "../common/cauroseal/SlideCauroseal";
 
 const Movie = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,8 @@ const Movie = () => {
     getMoives();
   }, []);
   return (
-    <div className="">
+    <div className=" mx-8">
+
       <MovieList />
     </div>
   );

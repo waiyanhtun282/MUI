@@ -14,3 +14,10 @@ export const selectedMovie = (movie) => {
     payload: movie,
   };
 };
+
+export const removeFetchMovie = () => {
+  return {
+    type: ACTION_TYPE.REMOVE_FETCHED_MOVIES,
+    payload: null,
+  };
+};

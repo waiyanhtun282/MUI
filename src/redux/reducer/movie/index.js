@@ -17,6 +17,11 @@ export const movieReducer = (state = initialState, { type, payload }) => {
         ...state,
         movie:payload
     }
+    case ACTION_TYPE.REMOVE_FETCHED_MOVIES: 
+    return{
+      ...state,
+      movie:{}
+    }
     default: return state;
   }
 };

@@ -24,7 +24,7 @@ const MovieList = () => {
           </div>
         </div>
       </div>
-      <div className="  grid grid-cols-4 gap-5 mt-10">
+      <div className="   flex  flex-wrap justify-between items-center gap-5 mt-10">
       {
         movieAll.length > 0 ?
         movieAll.map((movie) =>  <CardBox   movieCard={movie} key={movie.id}/>)

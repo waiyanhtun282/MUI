@@ -6,8 +6,9 @@ import {
   Navbar,
   Typography,
 } from "@material-tailwind/react";
-import {AiOutlineSearch} from  "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -27,9 +28,7 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center  text-md">
-          Home
-        </a>
+        <Link to="/">Home</Link>
       </Typography>
       <Typography
         as="li"
@@ -37,9 +36,7 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          TVShows
-        </a>
+        <Link to="/tv">TVShows</Link>
       </Typography>
       <Typography
         as="li"
@@ -47,9 +44,7 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Movie
-        </a>
+        Movie
       </Typography>
       <Typography
         as="li"
@@ -73,16 +68,16 @@ const Nav = () => {
             href="#"
             className="mr-14 cursor-pointer py-1.5 font-semibold justify-self-start text-lg"
           >
-             TMDB Movie
+            TMDB Movie
           </Typography>
           <div className=" hidden lg:block">{navList}</div>
 
           <div className="flex items-center gap-1 justify-self-end">
             <div className="mr-1 hidden lg:block">
-                <Input
-                  label="Search Movie"
-                  icon={<AiOutlineSearch  size={20}/>}
-                />
+              <Input
+                label="Search Movie"
+                icon={<AiOutlineSearch size={20} />}
+              />
             </div>
             <div className="flex items-center gap-x-1 ">
               <Button

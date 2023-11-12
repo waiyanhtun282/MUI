@@ -8,10 +8,12 @@ import {
 } from "@material-tailwind/react";
 import { AiOutlineSearch } from "react-icons/ai";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Nav = () => {
   const [openNav, setOpenNav] = React.useState(false);
+  const  {pathname} = useLocation();
+  console.log(pathname);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -28,7 +30,7 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/">Home</Link>
+        <Link to="/" className={(pathname === '/') ? 'active' : ''}>Home</Link>
       </Typography>
       <Typography
         as="li"
@@ -36,7 +38,17 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/tv">TVShows</Link>
+        <Link to="/tv" className={(pathname === '/tv') ? 'active' : ''}>TVShows</Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal cursor-pointer"
+      >
+      <Link to={'/movie'} className={(pathname === '/movie') ? 'active' : ''}>
+      Action Movie
+      </Link>
       </Typography>
       <Typography
         as="li"
@@ -44,17 +56,9 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        Movie
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          People
-        </a>
+      <Link to={'/people'} className={(pathname === '/people') ? 'active' : ''}>
+      People
+      </Link>
       </Typography>
     </ul>
   );

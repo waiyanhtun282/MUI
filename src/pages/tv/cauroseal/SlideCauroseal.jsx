@@ -1,12 +1,12 @@
 import { Button, Carousel } from "@material-tailwind/react";
-// import React from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 const SlideCauroseal = () => {
   // console.log(movieItem);
   let caurosealMovieData = [];
   caurosealMovieData = useSelector((state) => state.moviesData.curosealMovies);
-  // console.log(caurosealMovieData);
+  // console.log("TV",caurosealMovieData);
   return (
     <div className="  lg:h-screen ">
       <Carousel

@@ -13,7 +13,6 @@ const HomePage = () => {
       `/discover/movie?api_key=${api_key}&with_networks=213`
     );
     dispatch(caurosealMovies(res.data.results));
-    // console.log("Movies",res);
   };
 
   useEffect(() => {

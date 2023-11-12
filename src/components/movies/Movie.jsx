@@ -3,7 +3,6 @@ import MovieList from "./MovieList";
 import { api, api_key } from "../../api";
 import { useEffect } from "react";
 import { fetchMovies } from "../../redux/actions/movie";
-import SlideCauroseal from "../../pages/home/cauroseal/SlideCauroseal";
 
 const Movie = () => {
   const dispatch = useDispatch();

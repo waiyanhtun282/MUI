@@ -1,9 +1,9 @@
 import { ACTION_TYPE } from "../../actions/action_type";
 
 const initialState = {
-  curosealMovies:[],
+  curosealMovies: [],
   movies: [],
-  movie: {}, 
+  movie: {},
 };
 
 export const movieReducer = (state = initialState, { type, payload }) => {
@@ -11,23 +11,34 @@ export const movieReducer = (state = initialState, { type, payload }) => {
     case ACTION_TYPE.CAUROSEAL_MOVIES:
       return {
         ...state,
-        curosealMovies:payload
-      }
-    case ACTION_TYPE.FETCH_MOVIES: 
-    return{
+        curosealMovies: payload,
+      };
+    case ACTION_TYPE.CAUROSEAL_TV_MOVIES:
+      return {
         ...state,
-        movies:payload
-    }
-    case ACTION_TYPE.SELECTED_MOVIES: 
-    return{
+        curosealMovies: payload,
+      };
+    case ACTION_TYPE.FETCH_MOVIES:
+      return {
         ...state,
-        movie:payload
-    }
-    case ACTION_TYPE.REMOVE_FETCHED_MOVIES: 
-    return{
-      ...state,
-      movie:{}
-    }
-    default: return state;
+        movies: payload,
+      };
+    case ACTION_TYPE.FETCH_TV_MOVIES:
+      return {
+        ...state,
+        movies: payload,
+      };
+    case ACTION_TYPE.SELECTED_MOVIES:
+      return {
+        ...state,
+        movie: payload,
+      };
+    case ACTION_TYPE.REMOVE_FETCHED_MOVIES:
+      return {
+        ...state,
+        movie: {},
+      };
+    default:
+      return state;
   }
 };

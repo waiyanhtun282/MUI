@@ -1,29 +1,23 @@
 import { ACTION_TYPE } from "../../actions/action_type";
 
 const initialState = {
-  curosealMovies: [],
   movies: [],
   movie: {},
 };
 
 export const movieReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case ACTION_TYPE.CAUROSEAL_MOVIES:
-      return {
-        ...state,
-        curosealMovies: payload,
-      };
-    case ACTION_TYPE.CAUROSEAL_TV_MOVIES:
-      return {
-        ...state,
-        curosealMovies: payload,
-      };
     case ACTION_TYPE.FETCH_MOVIES:
       return {
         ...state,
         movies: payload,
       };
     case ACTION_TYPE.FETCH_TV_MOVIES:
+      return {
+        ...state,
+        movies: payload,
+      };
+    case ACTION_TYPE.FETCH_ACTION_MOVIES:
       return {
         ...state,
         movies: payload,

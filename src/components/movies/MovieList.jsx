@@ -9,7 +9,7 @@ const MovieList = () => {
   return (
     <div className="my-8 select-none">
       <div className="  flex items-center justify-between ">
-        <Typography variant="h5">Popular Movies</Typography>
+        <Typography variant="h5">Trending Movies</Typography>
         <div>
           <div className=" flex gap-3  ">
             <Select variant="outlined" label="SortBy">

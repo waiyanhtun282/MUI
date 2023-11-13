@@ -38,7 +38,7 @@ const Nav = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <Link to="/tv" className={(pathname === '/tv') ? 'active' : ''}>TVShows</Link>
+        <Link to="/tv" className={(pathname === '/tv') ? 'active' : ''}>Romance Movies</Link>
       </Typography>
       <Typography
         as="li"

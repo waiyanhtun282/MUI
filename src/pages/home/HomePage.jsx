@@ -1,18 +1,17 @@
 import { useEffect } from "react";
 import Movie from "../../components/movies/Movie";
-import { caurosealMovies } from "../../redux/actions/movie/index";
+import {  fetchMovies } from "../../redux/actions/movie/index";
 import { api, api_key } from "../../api";
-import { useDispatch,  } from "react-redux";
-import SlideCauroseal from "./cauroseal/SlideCauroseal";
+import { useDispatch } from "react-redux";
+import SlideCauroseal from "../../components/common/cauroseal/SlideCauroseal";
 const HomePage = () => {
   const dispatch = useDispatch();
-  
-  // console.log(movieItem);
+
   const getMoives = async () => {
     const res = await api.get(
-      `/discover/movie?api_key=${api_key}&with_networks=213`
+      `/movie/top_rated?api_key=${api_key}&language=en-US`
     );
-    dispatch(caurosealMovies(res.data.results));
+    dispatch(fetchMovies(res.data.results));
   };
 
   useEffect(() => {
@@ -20,7 +19,7 @@ const HomePage = () => {
   }, []);
   return (
     <div>
-      <SlideCauroseal  />
+      <SlideCauroseal />
 
       <Movie />
     </div>

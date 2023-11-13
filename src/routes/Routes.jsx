@@ -1,9 +1,9 @@
 import { useRoutes } from "react-router-dom";
 import RootLayouts from "./RootLayouts";
 import HomePage from "../pages/home/HomePage";
-import TvPage from "../pages/tv/TvPage";
-import MoviePage from "../pages/movie/MoviePage";
 import PeoplePage from "../pages/people/PeoplePage";
+import ActionMoviePage from "../pages/actionmovie/ActionMoviePage";
+import RomancePage from "../pages/romance/RomancePage";
 
  export default function Routes() {
     const elements =useRoutes([
@@ -19,7 +19,7 @@ import PeoplePage from "../pages/people/PeoplePage";
             path:'/tv',
             element:(
              <RootLayouts  >
-             <TvPage />
+             <RomancePage />
              </RootLayouts>
             )
         },
@@ -27,7 +27,7 @@ import PeoplePage from "../pages/people/PeoplePage";
             path:'/movie',
             element:(
              <RootLayouts  >
-                <MoviePage />
+                <ActionMoviePage />
              </RootLayouts>
             )
         },

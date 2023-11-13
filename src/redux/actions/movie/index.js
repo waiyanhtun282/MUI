@@ -1,22 +1,7 @@
 import { ACTION_TYPE } from "../action_type";
-export const caurosealMovies = (movies) => {
-  // console.log(movies);
-  return {
-    type: ACTION_TYPE.CAUROSEAL_MOVIES,
-    payload: movies,
-  };
-};
-
-export const caurosealTvMovies = (movies) => {
-  // console.log(movies);
-  return {
-    type: ACTION_TYPE.CAUROSEAL_TV_MOVIES,
-    payload: movies,
-  };
-};
 
 export const fetchMovies = (movies) => {
-  console.log(movies);
+  // console.log(movies);
   return {
     type: ACTION_TYPE.FETCH_MOVIES,
     payload: movies,
@@ -24,9 +9,16 @@ export const fetchMovies = (movies) => {
 };
 
 export const fetchTvMovies = (movies) => {
-  console.log(movies);
   return {
     type: ACTION_TYPE.FETCH_TV_MOVIES,
+    payload: movies,
+  };
+};
+
+export const fetchActionMovies = (movies) => {
+  console.log("moviesAction",movies);
+  return {
+    type: ACTION_TYPE.FETCH_ACTION_MOVIES,
     payload: movies,
   };
 };

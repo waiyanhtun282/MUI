@@ -2,18 +2,29 @@ import {
   Button,
   IconButton,
   Input,
-  MobileNav,
+  
   Navbar,
   Typography,
 } from "@material-tailwind/react";
 import { AiOutlineSearch } from "react-icons/ai";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { serachMovies } from "../../redux/actions/movie";
 
 const Nav = () => {
   const [openNav, setOpenNav] = React.useState(false);
   const  {pathname} = useLocation();
-  console.log(pathname);
+  // console.log(pathname);
+  const dispatch =useDispatch();
+  const moviesAll =useSelector(state =>state.moviesData.movies);
+  const handleSearch = (e) =>{
+    // if(e.target.value){
+      const searchText =e.target.value;
+      const filterMovie = moviesAll.filter((item) => item.title.toLowerCase().includes(searchText.toLowerCase()));
+      dispatch(serachMovies(filterMovie))
+    // }
+  }
 
   React.useEffect(() => {
     window.addEventListener(
@@ -79,8 +90,9 @@ const Nav = () => {
           <div className="flex items-center gap-1 justify-self-end">
             <div className="mr-1 hidden lg:block">
               <Input
-                label="Search Movie"
+                label="Search Movie"  
                 icon={<AiOutlineSearch size={20} />}
+                onChange={handleSearch}
               />
             </div>
             <div className="flex items-center gap-x-1 ">

@@ -16,12 +16,19 @@ export const fetchTvMovies = (movies) => {
 };
 
 export const fetchActionMovies = (movies) => {
-  console.log("moviesAction",movies);
+  // console.log("moviesAction",movies);
   return {
     type: ACTION_TYPE.FETCH_ACTION_MOVIES,
     payload: movies,
   };
 };
+
+export const serachMovies= (movies) =>{
+  return {
+    type:ACTION_TYPE.SEARCH_MOVIES,
+    payload:movies
+  }
+}
 
 export const selectedMovie = (movie) => {
   return {

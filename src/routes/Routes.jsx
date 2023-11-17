@@ -4,6 +4,7 @@ import HomePage from "../pages/home/HomePage";
 import PeoplePage from "../pages/people/PeoplePage";
 import ActionMoviePage from "../pages/actionmovie/ActionMoviePage";
 import RomancePage from "../pages/romance/RomancePage";
+import MovieDetail from "../components/detail/MovieDetail";
 
  export default function Routes() {
     const elements =useRoutes([
@@ -37,6 +38,13 @@ import RomancePage from "../pages/romance/RomancePage";
              <RootLayouts  >
                 <PeoplePage />
              </RootLayouts>
+            )
+        },
+
+        {
+            path:'/movie/:movieId',
+            element:(
+                <MovieDetail />
             )
         }
 
